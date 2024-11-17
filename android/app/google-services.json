@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1055843416603",
+    "project_id": "shopline-app-8c49f",
+    "storage_bucket": "shopline-app-8c49f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055843416603:android:7ffd1a642c47013b2256be",
+        "android_client_info": {
+          "package_name": "com.panamex.shopline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoSi8JQGupIBlx1w279zG0xPZEtLmlnyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
