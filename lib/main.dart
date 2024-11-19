@@ -1,24 +1,12 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'application/firebase_api.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'widgets/splash_screen.dart';
-import 'firebase_options.dart';
-
 final navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-
-    final firebaseApi = FirebaseApi();
-    await firebaseApi.initNotifications();
-    await firebaseApi.configureBackgroundMessageHandler();
-
     runApp(MyApp());
   } catch (e) {
     runApp(MaterialApp(

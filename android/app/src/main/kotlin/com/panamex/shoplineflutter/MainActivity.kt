@@ -1,4 +1,4 @@
-package com.panamex.shoplineflutter
+package com.panamex.shoplinerepartidorflutter
 
 import io.flutter.embedding.android.FlutterActivity
 
