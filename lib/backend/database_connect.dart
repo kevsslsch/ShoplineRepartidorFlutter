@@ -9,7 +9,7 @@ import '../models/versionModel.dart';
 
 class DatabaseProvider {
   late SharedPreferences preffs;
-  static const VERSION = "1.0.0";
+  static const VERSION = "1.0.1";
 
   static const ROOT = "https://shoplinepanama.com/apis_repartidor/";
   static const ROOTLOGIN = ROOT + "api.login.php";
