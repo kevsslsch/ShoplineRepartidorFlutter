@@ -1,9 +1,11 @@
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../application/firebase_api.dart';
 import '../application/functions.dart';
 import '../backend/database_connect.dart';
 import 'package:flutter/material.dart';
@@ -43,13 +45,16 @@ class _LoginWidgetState extends State<LoginWidget> {
     String userValue = userController.text;
     String password = passwordController.text;
 
+    await Firebase.initializeApp();
+    token = (await FirebaseApi().getToken())!;
+
     if (userValue.isEmpty) {
       Functions.showAlert(context, "Debes escribir tu usuario");
     } else if (password.isEmpty) {
       Functions.showAlert(context, "Debes escribir tu contraseña");
     }else {
       DatabaseProvider.login(
-          userValue, password)
+          userValue, password, token)
           .then((value) {
         if (value.status) {
           preffs.setString("userValue", userValue);

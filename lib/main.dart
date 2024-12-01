@@ -1,12 +1,27 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'application/firebase_api.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
+import 'widgets/notification_page.dart';
 import 'widgets/splash_screen.dart';
+import 'firebase_options.dart';
+
 final navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+    final firebaseApi = FirebaseApi();
+    await firebaseApi.initNotifications();
+    await firebaseApi.configureBackgroundMessageHandler();
+
     runApp(MyApp());
   } catch (e) {
     runApp(MaterialApp(
@@ -48,7 +63,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Shopline Repartidor App',
+      title: 'Shopline Repartidor',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -97,7 +112,7 @@ class _MyAppState extends State<MyApp> {
       home: SplashScreen(),
       navigatorKey: navigatorKey,
       routes: {
-       // '/notification_screen': (context) => NotificationPage(),
+        '/notification_screen': (context) => NotificationPage(),
       },
     );
   }

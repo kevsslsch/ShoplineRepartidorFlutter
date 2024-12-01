@@ -18,8 +18,8 @@ class DatabaseProvider {
   static const ROOTPROBLEMAENTREGA = ROOT + "api.solicitud_problema_entrega.php";
   static const ROOTENTREGADASOLICITUD = ROOT + "api.solicitud_entregada.php";
 
-  static Future<user> login(String userValue, String password) async {
-    Map data = {'user': userValue, 'password': password};
+  static Future<user> login(String userValue, String password, String token_firebase) async {
+    Map data = {'user': userValue, 'password': password, 'token_firebase' : token_firebase};
 
     //encode Map to JSON
     var body = json.encode(data);

@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDdd9tJ8OmEICwGFRGBuJuK1CLPX7XPEjM</string>
+	<string>AIzaSyAhFL8VgVKEc6l_rE5eqvTRVsEx5rNsve4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1055843416603</string>
+	<string>526358949411</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.panamex.shoplinerepartidorflutter</string>
 	<key>PROJECT_ID</key>
-	<string>shopline-app-8c49f</string>
+	<string>shopline-app-admin</string>
 	<key>STORAGE_BUCKET</key>
-	<string>shopline-app-8c49f.appspot.com</string>
+	<string>shopline-app-admin.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1055843416603:ios:36058d189b9b3c5d2256be</string>
+	<string>1:526358949411:ios:e880f527e0e8fa9a250b96</string>
 </dict>
 </plist>

@@ -13,6 +13,7 @@ import '../components/shimmers.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../models/facturaModel.dart';
 import '../models/userModel.dart';
+import 'login_widget.dart';
 
 class MainWidget extends StatefulWidget {
   final user usuario;
@@ -187,19 +188,41 @@ class _MainWidgetState extends State<MainWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Padding(
-                          padding:
+                        Row(
+                          children: [
+                            Padding(
+                              padding:
                               EdgeInsetsDirectional.fromSTEB(15, 10, 15, 15),
-                          child: Row(
-                            children: [
-                              Text("Facturas pendientes",
-                                  style: GoogleFonts.getFont('Poppins',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                      color: Colors.black)),
-                            ],
-                          ),
+                              child: Row(
+                                children: [
+                                  Text("Facturas pendientes",
+                                      style: GoogleFonts.getFont('Poppins',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25,
+                                          color: Colors.black)),
+                                ],
+                              ),
+                            ),
+
+                            Spacer(),
+
+                            GestureDetector(
+                                onTap: () {
+                                  _logOut();
+                                },
+                                child: SizedBox(
+                                  width: 50.0, // Set the width of the icon
+                                  height: 50.0, // Set the height of the icon
+                                  child: Icon(
+                                    Ionicons.log_out_outline,
+                                    // Replace with the desired icon
+                                    size: 30.0, // Set the size of the icon
+                                    color: Colors.black, // Set the color of the icon
+                                  ),
+                                ))
+                          ],
                         ),
+
                         Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             child: Container(
@@ -624,4 +647,13 @@ class _MainWidgetState extends State<MainWidget> {
       throw 'Could not launch $phoneUri';
     }
   }
+
+  _logOut() async {
+    var preffs = await SharedPreferences.getInstance();
+    preffs.clear();
+
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginWidget()));
+  }
+
 }

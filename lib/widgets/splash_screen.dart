@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../application/firebase_api.dart';
 import '../application/functions.dart';
 import '../backend/database_connect.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -86,10 +87,11 @@ class _SplashScreenState extends State<SplashScreen> {
       preffs = await SharedPreferences.getInstance();
       String? userValue = preffs.getString("userValue");
       String? password = preffs.getString("password");
+      token = (await FirebaseApi().getToken())!;
 
       if (userValue != null && password != null) {
         Future.delayed(Duration(seconds: 1)).then((value) {
-          DatabaseProvider.login(userValue!, password!).then((value) {
+          DatabaseProvider.login(userValue!, password!, token).then((value) {
             if (value.status) {
               Navigator.pushReplacement(
                 context,

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "526358949411",
+    "project_id": "shopline-app-admin",
+    "storage_bucket": "shopline-app-admin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526358949411:android:aeeca1fe96afbbf8250b96",
+        "android_client_info": {
+          "package_name": "com.panamex.shoplinerepartidor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQieH_b0aTpkWwFyVnxWKI2sVMFc-mVD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
